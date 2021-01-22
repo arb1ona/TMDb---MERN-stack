@@ -71,10 +71,11 @@ function MovieDetailPage(props) {
         <Button>Toggle Actor</Button>
       </div>
 
-      {/* <Row gutter={[16, 16]}>
+      <Row gutter={[16, 16]}>
         {Crews &&
           Crews.map((crew, index) => (
             <React.Fragment key={index}>
+              {/* only the person who has a pic should be shown in the GridCard */}
               {crew.profile_path && (
                 <GridCard
                   actor
@@ -83,7 +84,7 @@ function MovieDetailPage(props) {
               )}
             </React.Fragment>
           ))}
-      </Row> */}
+      </Row>
     </div>
   );
 }
