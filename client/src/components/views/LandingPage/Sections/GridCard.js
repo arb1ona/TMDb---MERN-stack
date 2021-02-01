@@ -7,7 +7,7 @@ export default function GridCard(props) {
       <Col lg={6} md={8} xs={24}>
         <div style={{ position: "relative" }}>
           <img
-            style={{ width: "100%", height: "320px" }}
+            style={{ width: "100%", height: "320px", objectFit: "cover" }}
             alt="img"
             src={props.image}
           />
@@ -20,7 +20,7 @@ export default function GridCard(props) {
         <div style={{ position: "relative" }}>
           <a href={`/movie/${props.movieId}`}>
             <img
-              style={{ width: "100%", height: "320px" }}
+              style={{ width: "100%", height: "320px", objectFit: "cover" }}
               alt="img"
               src={props.image}
             />

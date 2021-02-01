@@ -68,30 +68,37 @@ function MovieDetailPage(props) {
             {Movie.popularity}
           </Descriptions.Item>
         </Descriptions>
-      </div>
-      <br />
-      {/* Actors Grid*/}
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Button onClick={handleClick}>Toggle Actor</Button>
-      </div>
+        <br />
+        {/* Actors Grid*/}
 
-      {ActorToggle && (
-        <Row gutter={[16, 16]}>
-          {Crews &&
-            Crews.map((crew, index) => (
-              <React.Fragment key={index}>
-                {/* only the person who has a pic should be shown in the GridCard */}
-                {crew.profile_path && (
-                  <GridCard
-                    actor
-                    image={`${IMAGE_URL}w500${crew.profile_path}`}
-                  />
-                )}
-              </React.Fragment>
-            ))}
-        </Row>
-      )}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "20px",
+          }}
+        >
+          <Button onClick={handleClick}>Toggle Actor</Button>
+        </div>
+
+        {ActorToggle && (
+          <Row gutter={[16, 16]}>
+            {Crews &&
+              Crews.map((crew, index) => (
+                <React.Fragment key={index}>
+                  {/* only the person who has a pic should be shown in the GridCard */}
+                  {crew.profile_path && (
+                    <GridCard
+                      actor
+                      image={`${IMAGE_URL}w500${crew.profile_path}`}
+                    />
+                  )}
+                </React.Fragment>
+              ))}
+          </Row>
+        )}
+      </div>
     </div>
   );
 }
