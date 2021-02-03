@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { use } from "../../../../../../server/routes/Favorite";
 
 function Favorite(props) {
   const [FavoriteNumber, setFavoriteNumber] = useState(0);
@@ -34,7 +33,10 @@ function Favorite(props) {
 
   return (
     <div>
-      <button>Add to Favourite</button>
+      <button>
+        {Favorited ? "remove from Favorites" : "Add to Favorite"}{" "}
+        {FavoriteNumber}
+      </button>
     </div>
   );
 }

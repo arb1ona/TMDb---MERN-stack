@@ -13,7 +13,7 @@ router.post("/favoriteNumber", auth, (req, res) => {
   // we get it from the models
   Favorite.find({ movieId: req.body.movieId }).exec((err, favorite) => {
     if (err) return res.status(400).send(err);
-    res.status(200).json({ success: true, FavoriteNumber: favorite.length });
+    res.status(200).json({ success: true, favoriteNumber: favorite.length });
   });
 });
 
