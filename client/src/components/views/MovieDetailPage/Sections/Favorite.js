@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { use } from "../../../../../../server/routes/Favorite";
 
 function Favorite(props) {
   const [FavoriteNumber, setFavoriteNumber] = useState(0);
+  const [Favorited, setFavorited] = useState(false);
 
   const variable = {
     userFrom: props.userFrom,
@@ -21,6 +23,14 @@ function Favorite(props) {
       }
     });
   }, []);
+
+  axios.post("/api/favorite/favorited", variable).then((response) => {
+    if (response.data.success) {
+      setFavorited(response.data.favorited);
+    } else {
+      alert("Failed to get Favorite Info!");
+    }
+  });
 
   return (
     <div>
