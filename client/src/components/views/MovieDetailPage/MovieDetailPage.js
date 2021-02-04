@@ -25,6 +25,7 @@ function MovieDetailPage(props) {
             setCrews(response.cast);
           });
       });
+    // eslint-disable-next-line
   }, []);
 
   const handleClick = () => {
