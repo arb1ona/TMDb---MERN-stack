@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FaCode } from "react-icons/fa";
 import { API_URL, API_KEY, IMAGE_URL } from "../../Config";
 import { Typography, Row } from "antd";
 import GridCard from "./Sections/GridCard";
@@ -13,6 +12,8 @@ function LandingPage() {
   useEffect(() => {
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
     fetchMovies(endpoint);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchMovies = (path) => {
