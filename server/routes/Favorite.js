@@ -44,22 +44,22 @@ router.post("/addToFavorite", (req, res) => {
   });
 });
 
-router.post("/removeFromFavorite", (req, res) => {
-  Favorite.findOneAndDelete({
-    movieId: req.body.movieId,
-    userFrom: req.body.userFrom,
-  }).exec((err, doc) => {
-    if (err) return res.status(400).json({ success: false, err });
-    res.status(200).json({ success: true, doc });
-  });
-});
-
-router.post("/getFavoredMovie", (req, res) => {
-  //Need to find all of the Users that I am subscribing to From Subscriber Collection
+router.post("/getFavoritedMovie", (req, res) => {
   Favorite.find({ userFrom: req.body.userFrom }).exec((err, favorites) => {
     if (err) return res.status(400).send(err);
     return res.status(200).json({ success: true, favorites });
   });
 });
+
+// router.post("/getFavoritedMovie", (req, res) => {
+//   //Need to find all of the Users that I am subscribing to From Subscriber Collection
+//   Favorite.findOneAndDelete({
+//     movieId: req.body.movieId,
+//     userFrom: req.body.userFrom,
+//   }).exec((err, doc) => {
+//     if (err) return res.status(400).json({ success: false, err });
+//     res.status(200).json({ success: true, doc });
+//   });
+// });
 
 module.exports = router;
