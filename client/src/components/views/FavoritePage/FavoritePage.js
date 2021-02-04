@@ -1,64 +1,76 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Typography, Popover, Button } from "antd";
+import axios from "axios";
 import "./favoritte.css";
-import { Popover } from "antd";
+import { useSelector } from "react-redux";
 import { IMAGE_URL } from "../../Config";
 
+const { Title } = Typography;
+
 function FavoritePage() {
-  const variables = { userFrom: localStorage.getItem("userId") };
-  const [FavoritedMovies, setFavoritedMovies] = useState([]);
+  const user = useSelector((state) => state.user);
+
+  const [Favorites, setFavorites] = useState([]);
+  const [Loading, setLoading] = useState(true);
+  let variable = { userFrom: localStorage.getItem("userId") };
 
   useEffect(() => {
-    fetchFavoritedMovies();
+    fetchFavoredMovie();
   }, []);
 
-  const fetchFavoritedMovies = () => {
-    axios
-      .post("/api/favorite/getFavoritedMovie", variables)
-      .then((response) => {
-        if (response.data.success) {
-          setFavoritedMovies(response.data.favorites);
-        } else {
-          alert("Failed to get liked videos");
-        }
-      });
+  const fetchFavoredMovie = () => {
+    axios.post("/api/favorite/getFavoredMovie", variable).then((response) => {
+      if (response.data.success) {
+        console.log(response.data.favorites);
+        setFavorites(response.data.favorites);
+        setLoading(false);
+      } else {
+        alert("Failed to get subscription videos");
+      }
+    });
   };
 
-  const onClickRemove = (movieId) => {
+  const onClickDelete = (movieId, userFrom) => {
     const variables = {
       movieId: movieId,
-      userFrom: localStorage.getItem("userId"),
+      userFrom: userFrom,
     };
+
     axios
       .post("/api/favorite/removeFromFavorite", variables)
       .then((response) => {
         if (response.data.success) {
-          fetchFavoritedMovies();
+          fetchFavoredMovie();
         } else {
-          alert("Failed to remove from favorite");
+          alert("Failed to Remove From Favorite");
         }
       });
   };
 
-  const renderTableBody = FavoritedMovies.map((movie, index) => {
+  const renderCards = Favorites.map((favorite, index) => {
     const content = (
       <div>
-        {movie.moviePost ? (
-          <img src={`${IMAGE_URL}w500${movie.moviePost}`} alt="moviePost" />
+        {favorite.moviePost ? (
+          <img src={`${IMAGE_URL}w500${favorite.moviePost}`} />
         ) : (
-          "no Image"
+          "no image"
         )}
       </div>
     );
+
     return (
-      <tr>
-        <Popover content={content} title={`${movie.moviePost}`}>
-          <td>{movie.movieTitle}</td>
+      <tr key={index}>
+        <Popover content={content} title={`${favorite.movieTitle}`}>
+          <td>{favorite.movieTitle}</td>
         </Popover>
-        <td>{movie.movieRunTime}</td>
+
+        <td>{favorite.movieRunTime} mins</td>
         <td>
-          <button onClick={() => onClickRemove(movie.movieId)}>
-            Remove from Favorites
+          <button
+            onClick={() => onClickDelete(favorite.movieId, favorite.userFrom)}
+          >
+            {" "}
+            Remove{" "}
           </button>
         </td>
       </tr>
@@ -67,18 +79,37 @@ function FavoritePage() {
 
   return (
     <div style={{ width: "85%", margin: "3rem auto" }}>
-      <h3>Favorite Movies By Me</h3>
+      <Title level={2}> Favorite Movies By Me </Title>
       <hr />
-      <table>
-        <thead>
-          <tr>
-            <th>Movie Title</th>
-            <th>Movie RunTime</th>
-            <th>Remove from favorites</th>
-          </tr>
-        </thead>
-        <tbody>{renderTableBody}</tbody>
-      </table>
+      {user.userData && !user.userData.isAuth ? (
+        <div
+          style={{
+            width: "100%",
+            fontSize: "2rem",
+            height: "500px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <p>Please Log in first...</p>
+          <a href="/login">Go to Login page</a>
+        </div>
+      ) : (
+        !Loading && (
+          <table>
+            <thead>
+              <tr>
+                <th>Movie Title</th>
+                <th>Movie RunTime</th>
+                <td>Remove from favorites</td>
+              </tr>
+            </thead>
+            <tbody>{renderCards}</tbody>
+          </table>
+        )
+      )}
     </div>
   );
 }

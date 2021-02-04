@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-//import { Button } from "antd";
+import { Button } from "antd";
 import { useSelector } from "react-redux";
 
 function Favorite(props) {
@@ -14,7 +14,6 @@ function Favorite(props) {
 
   const [FavoriteNumber, setFavoriteNumber] = useState(0);
   const [Favorited, setFavorited] = useState(false);
-
   const variables = {
     movieId: movieId,
     userFrom: userFrom,
@@ -22,23 +21,6 @@ function Favorite(props) {
     moviePost: moviePost,
     movieRunTime: movieRunTime,
   };
-  useEffect(() => {
-    axios.post("/api/favorite/favoriteNumber", variables).then((response) => {
-      if (response.data.success) {
-        setFavoriteNumber(response.data.subscribeNumber);
-      } else {
-        alert("Failed to get Favorite Number");
-      }
-    });
-
-    axios.post("/api/favorite/favorited", variables).then((response) => {
-      if (response.data.success) {
-        setFavorited(response.data.subcribed);
-      } else {
-        alert("Failed to get Favorite Information");
-      }
-    });
-  }, []);
 
   const onClickFavorite = () => {
     if (user.userData && !user.userData.isAuth) {
@@ -61,7 +43,6 @@ function Favorite(props) {
       // when we are not subscribed yet
 
       axios.post("/api/favorite/addToFavorite", variables).then((response) => {
-        console.log(response);
         if (response.data.success) {
           setFavoriteNumber(FavoriteNumber + 1);
           setFavorited(!Favorited);
@@ -72,12 +53,30 @@ function Favorite(props) {
     }
   };
 
+  useEffect(() => {
+    axios.post("/api/favorite/favoriteNumber", variables).then((response) => {
+      if (response.data.success) {
+        setFavoriteNumber(response.data.subscribeNumber);
+      } else {
+        alert("Failed to get Favorite Number");
+      }
+    });
+
+    axios.post("/api/favorite/favorited", variables).then((response) => {
+      if (response.data.success) {
+        setFavorited(response.data.subcribed);
+      } else {
+        alert("Failed to get Favorite Information");
+      }
+    });
+  }, []);
+
   return (
     <>
-      <button onClick={onClickFavorite}>
-        {Favorited ? "Remove from Favorite" : "Add to Favorite"}
-        {FavoriteNumber}
-      </button>
+      <Button onClick={onClickFavorite}>
+        {" "}
+        {!Favorited ? "Add to Favorite" : "Not Favorite"} {FavoriteNumber}
+      </Button>
     </>
   );
 }
