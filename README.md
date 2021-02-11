@@ -44,7 +44,7 @@ mongoURI:
 ✅ Landing Page    
 ✅ Movie Detail Page
 
-<img src="https://user-images.githubusercontent.com/63557021/107699275-25441a80-6cb6-11eb-85af-586c469cccd3.png" width="340"><img src="https://user-images.githubusercontent.com/63557021/107699719-c4691200-6cb6-11eb-832f-0d44a37fa032.png" width="340"><img src="https://user-images.githubusercontent.com/63557021/107703568-1a8c8400-6cbc-11eb-971f-751297bb8feb.png" width="340">
+<img src="https://user-images.githubusercontent.com/63557021/107699275-25441a80-6cb6-11eb-85af-586c469cccd3.png" width="330"><img src="https://user-images.githubusercontent.com/63557021/107699719-c4691200-6cb6-11eb-832f-0d44a37fa032.png" width="330"><img src="https://user-images.githubusercontent.com/63557021/107703568-1a8c8400-6cbc-11eb-971f-751297bb8feb.png" width="330">
 
 ✅ Favorite Feature    
 ✅ Favorite Feature-2 
