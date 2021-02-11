@@ -16,16 +16,14 @@ mongoURI:
 - Type `npm install` inside the root directory 
 - Type `npm install` inside the client directory
 
-## setting up API
+## Setting Project Logic 🚀
+
+[x] Movie Database API
+[x] Landing Page
+[x] Movie Detail Page
 
 <img src="https://user-images.githubusercontent.com/63557021/107699275-25441a80-6cb6-11eb-85af-586c469cccd3.png" width="320"><img src="https://user-images.githubusercontent.com/63557021/107699719-c4691200-6cb6-11eb-832f-0d44a37fa032.png" width="320"><img src="https://user-images.githubusercontent.com/63557021/107700014-2b86c680-6cb7-11eb-912e-ce64a2fbd05e.png" width="320">
 
-
-## setting up API
-
-- [x] Formatted response
-- [x] User Registration
-- [x] Validation & Login R
 
 
 
