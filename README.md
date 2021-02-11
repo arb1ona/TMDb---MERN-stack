@@ -18,6 +18,8 @@ mongoURI:
 
 ## setting up API
 
+<img src="https://user-images.githubusercontent.com/63557021/107699275-25441a80-6cb6-11eb-85af-586c469cccd3.png" width="350">
+
 <img src="https://user-images.githubusercontent.com/63557021/107699042-c54d7400-6cb5-11eb-9228-0e6fc0d6d4ab.png" width="350"><img src="https://user-images.githubusercontent.com/63557021/107697949-26744800-6cb4-11eb-91f5-e1685c0b580f.png" width="350" ><img src="https://user-images.githubusercontent.com/63557021/107696702-9550a180-6cb2-11eb-830e-b92791948f81.png" width="350" >
 
 
