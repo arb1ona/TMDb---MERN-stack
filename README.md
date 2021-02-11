@@ -5,7 +5,7 @@
 ✅ Movie Page    
 ✅ Favorite Movies
 
-<img src="https://user-images.githubusercontent.com/63557021/107709870-3bf26d80-6cc6-11eb-9979-7d7393b7c603.jpg" ><img src="https://user-images.githubusercontent.com/63557021/107709863-38f77d00-6cc6-11eb-854e-79302781d431.png">
+<img src="https://user-images.githubusercontent.com/63557021/107709870-3bf26d80-6cc6-11eb-9979-7d7393b7c603.jpg" width="500" ><img src="https://user-images.githubusercontent.com/63557021/107709863-38f77d00-6cc6-11eb-854e-79302781d431.png"  width="500">
 
 ##  What we will be covering ?
 
