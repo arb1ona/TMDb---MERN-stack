@@ -18,7 +18,7 @@ mongoURI:
 
 ## setting up API
 
-<img src="https://user-images.githubusercontent.com/63557021/107696702-9550a180-6cb2-11eb-830e-b92791948f81.png" width="250" height="250">
+<img src="https://user-images.githubusercontent.com/63557021/107696702-9550a180-6cb2-11eb-830e-b92791948f81.png" width="350" >
 
 
 
