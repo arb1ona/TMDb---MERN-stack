@@ -18,9 +18,13 @@ mongoURI:
 
 ## setting up API
 <p>
+  <img align="left" src="https://user-images.githubusercontent.com/63557021/107697949-26744800-6cb4-11eb-91f5-e1685c0b580f.png" width="350" >
 <img align="right" src="https://user-images.githubusercontent.com/63557021/107696702-9550a180-6cb2-11eb-830e-b92791948f81.png" width="350" >
-<img align="left" src="https://user-images.githubusercontent.com/63557021/107697949-26744800-6cb4-11eb-91f5-e1685c0b580f.png" width="350" >
+
 </p>
+
+## setting up API
+
 - [x] Formatted response
 - [x] User Registration
 - [x] Validation & Login R
