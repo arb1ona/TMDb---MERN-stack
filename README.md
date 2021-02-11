@@ -50,10 +50,7 @@ mongoURI:
 ✅ Favorite Feature-2 
 ✅ Favorite Page
 
-<img src="https://user-images.githubusercontent.com/63557021/107703647-3a23ac80-6cbc-11eb-9747-c390a56f9d89.png" width="340"><img src="https://user-images.githubusercontent.com/63557021/107703723-5e7f8900-6cbc-11eb-8a51-b27df5141b81.png" width="340"><img src="https://user-images.githubusercontent.com/63557021/107703835-88d14680-6cbc-11eb-8a85-cbd49c440333.png" width="340">
-
+<img src="https://user-images.githubusercontent.com/63557021/107703647-3a23ac80-6cbc-11eb-9747-c390a56f9d89.png" width="330"><img src="https://user-images.githubusercontent.com/63557021/107703723-5e7f8900-6cbc-11eb-8a51-b27df5141b81.png" width="330"><img src="https://user-images.githubusercontent.com/63557021/107703835-88d14680-6cbc-11eb-8a85-cbd49c440333.png" width="330">
 
 ## Acknowledgments
-
-To John Ahn for the web [tutorial](https://www.youtube.com/channel/UCFyXA9x8lpL3EYWeYhj4C4Q?view_as=subscriber) 
-
+To John Ahn for the [tutorial](https://www.youtube.com/channel/UCFyXA9x8lpL3EYWeYhj4C4Q?view_as=subscriber) 
